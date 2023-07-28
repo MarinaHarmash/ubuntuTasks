@@ -1,14 +1,13 @@
-#!bin/bash
+#!/bin/bash 
 
-set -ex;
+set -ex
 
-sudo apt update;
-
-sudo apt install nginx;
+sudo apt-get update
+sudo apt-get install nginx
 
 sudo systemctl enable nginx
 
-sudo systemctl is-anabled nginx
+sudo systemctl is-enabled nginx
 
 sudo mkdir -p /var/www/firstSite/html
 
@@ -29,7 +28,7 @@ echo "server {
 
     root /var/www/firstSite/html;
     index index.html;
-}" | sudo tee /etx/nginx/sites-available/firstSite.conf 
+}" | sudo tee /etc/nginx/sites-available/firstSite.conf 
 
 
 sudo ln -s /etc/nginx/sites-available/firstSite.conf /etc/nginx/sites-enabled/
