@@ -1,0 +1,48 @@
+
+pwd                           - print workig directory
+cd                            - change working directory (start with /)
+cd ~                          - change directory to home
+cd ../                        - change directory on one level up (parent directory)
+ls                            - list of the content  directory
+ls lah                        - list all of the content (+invisible)
+sudo                          - super user (admin) - have all the privileges
+sudo su                       - switch to root account
+su [name]                     - switch to name account
+apt-get install               - install something
+apt-get remove                - uninstall
+apt-cache search              - search in the cache of software packages
+sudo apt-get update           - update package manager
+sudo chown [user:group file]  - change the file's owner  (-R change owner recursive all files in directory)
+sudo chmod [perm(644) file]   - change the permissions of the file (-R)
+    7 - read, write, execute(rwx)
+    6 - read and write (rw);
+    4 - read (r);
+    2 - write (w);
+    1 - execue (x)
+    d - directory(d)
+rm                             - remove file (directory)
+rm -rf                         - file or directory will be deleted anyhow even if it has read-only permission
+mkdir                          - create the directory
+touch                          - create the new file, and stay in ternminal
+cp [file filepath]             - make a copy of file 
+mv [filename filename2]        - move the file
+./*.cpp                        - all files(*), containing .cpp extension
+rm dir/*                       - delete all files from directory
+find . -type(f for file) -name "" - look for a something
+find . -type f -iname          - look for a file ignoring case sensetive
+find . -type f -perm 644       - look for file's permission 
+find . -size
+find . -type -not -iname ""
+find . -maxdepth 1 -type -iname 
+grep [smth] [file.txt] -i -n   - look for smth in file.txt and line's number
+>                              - redirect the output the command
+top                            - what process is active in real time
+ps aux                         - monitor processes running on system
+pgrep                          - displays the PID of processes that match any given pattern
+sudo [service.name] start
+sudo [service.name] restart    - refresh service
+sudo [service.name] stop
+sudo systemctl start/stop/restart [service.name]  
+crontab -e ( h m dayOfMonth month day of week command) - creating schedule for any action
+free                           - display free and used memory in the system
+uptime                         - Tell how long the system has been running
