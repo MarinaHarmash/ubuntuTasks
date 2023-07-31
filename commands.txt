@@ -45,4 +45,9 @@ sudo [service.name] stop
 sudo systemctl start/stop/restart [service.name]  
 crontab -e ( h m dayOfMonth month day of week command) - creating schedule for any action
 free                           - display free and used memory in the system
-uptime                         - Tell how long the system has been running
+uptime                         - tell how long the system has been running
+df                             - displays information about file system disk space usage
+fdisk                          - used for creating and manipulating disk partition. It is used for the view, create, 
+                                    delete, change, resize, copy and move partitions on a hard drive.
+lsblk                          - displays information about all block storage devices that are currently available on the system.
+htop                           - like a top, but more infornative
