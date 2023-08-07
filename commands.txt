@@ -1,4 +1,3 @@
-
 pwd                           - print workig directory
 cd                            - change working directory (start with /)
 cd ~                          - change directory to home
@@ -13,6 +12,7 @@ apt-get remove                - uninstall
 apt-cache search              - search in the cache of software packages
 sudo apt-get update           - update package manager
 sudo chown [user:group file]  - change the file's owner  (-R change owner recursive all files in directory)
+chgrp                         - change group ownership
 sudo chmod [perm(644) file]   - change the permissions of the file (-R)
     7 - read, write, execute(rwx)
     6 - read and write (rw);
@@ -36,6 +36,23 @@ find . -type -not -iname ""
 find . -maxdepth 1 -type -iname 
 grep [smth] [file.txt] -i -n   - look for smth in file.txt and line's number
 >                              - redirect the output the command
+diff(count of files(3 or more))- compare two files line by line. 
+                                    It can also compare the contents of directories
+patch                          - takes a patch file as input and apply the 
+                                    differences to one or more original file, producing patched 
+                                    versions
+sed                            - filtering and transforming text
+sort                           - sort lines of text files
+uniq                           - report or omit repeated lines
+paste                          - merge lines of files
+join                           - join lines of two files on a common field
+split                          - split a file into pieces
+tee                            - displays or redirects the output of a command 
+                                    and copies its contents to a file or variable
+wc ?                           - data extraction and reporting
+
+
+
 top                            - what process is active in real time
 ps aux                         - monitor processes running on system
 pgrep                          - displays the PID of processes that match any given pattern
@@ -51,3 +68,20 @@ fdisk                          - used for creating and manipulating disk partiti
                                     delete, change, resize, copy and move partitions on a hard drive.
 lsblk                          - displays information about all block storage devices that are currently available on the system.
 htop                           - like a top, but more infornative
+useradd (-m)                   - add new user (create home directory for user) -c -comment
+renice pid                     - change priority for process  (ps lf- see priority)
+gnome-system-monitor           - view and control processes
+whoami                         - print effective userid
+useradd                        - create a new user or update default new user information
+userdel                        - delete a user account and related files
+id                             - print real and effective user and group IDs
+
+
+
+
+
+                            WildCard
+                            ?       - Matches any single characters
+                            *       - Matches any string or characters
+                            [set]   - Matches any characters in the set of characters (exp[adf])
+                            [!set]  - Matches any character in in the set of the characters 
