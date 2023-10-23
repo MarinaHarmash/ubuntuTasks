@@ -1,0 +1,40 @@
+# Nginx by default load all configuration files via /etc/nginx/nginx.conf
+# include /etc/nginx/sites-available/* 
+
+
+# minimum nginx config 
+server {
+        listen 80 default_server;           # Default all sites here
+        listen [::]:80 default_server;
+
+        root /var/www/html/site1.com;       # Site root folder
+        index index.html example.html;      # default index page 
+
+        server_name site1.local;            # Detect hostname headers and make route decision
+
+        location / {                        # site path handler
+                try_files $uri $uri/ =404;
+        }
+
+        location ~ \.php$ {                 # Forward all .php URLs to PHP processor
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_pass unix:/var/run/php7.2-fpm-wordpress-site.sock;
+            fastcgi_index index.php;
+            include fastcgi.conf;
+        }
+
+        location /greet {                   # Forward /greet page with plain text
+            default_type text/plain;        # Configure 
+            return 200 "Hello User!";
+        }
+}
+# Simple HTML Page that should be stored within server root folder
+# And use default index name 
+<html>
+    <head>
+        <title>Site 2</title>
+    </head>
+    <body>
+        <h1>hi from site2</h1>
+    </body>
+</html>

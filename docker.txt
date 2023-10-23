@@ -1,0 +1,10 @@
+# Example of the Dockerfile 
+# https://docs.docker.com/get-started/02_our_app/
+
+FROM python:latest                      # Take docker image as a base image
+WORKDIR /app                            # change currect folder to /app
+COPY src/ .                             # copy all files from current/src dir to docker current dir
+RUN pip install -r requirements.txt     # run in terminal mentioned command
+CMD ["python", "myapp.py"]              # run mentioned command as docker start command
+ENV SERV=myserv                         # create environment variable called SERV and value is 'myserv'
+EXPOSE 5000                             # Expose port 5000 from Docker
